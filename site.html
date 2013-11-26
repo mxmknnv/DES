@@ -1,0 +1,73 @@
+<html>
+   <head>
+        <title>Des encryption/decryption</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/JavaScript" src="script.js"></script>
+   </head>
+
+   <body>
+	<form name="form">
+		<h1 align="center">
+			DES (Data Encryption Standard)
+			<br>
+			Шифрование/дешифровка
+		</h1>
+		<strong>Входные данные</strong>
+		<hr>
+		<table>
+			<tr valign="top">
+				<td>
+					<textarea name="input" cols="35" rows="5" wrap="virtual"></textarea> 
+					<br>
+					<input type="file" onChange="readfile(this.files[0], 0)"></input>
+				</td>
+				<td>
+					Как интерпретировать вводимую информацию?
+					<br>
+					<input type="radio" name="input_type" checked="checked">ASCII</input>
+					<br>
+					<input type="radio" name="input_type">Шестнадцатеричное число</input>
+					<br></br>
+					<strong>(!)</strong> В случае, если размер входных данных не кратен 64-битам, к сообщению (в кодировке ASCII) добавляются символы "\0", в начало шестнадцатеричного числа добавляются 0.
+				</td>
+			</tr>
+		</table>
+		<br>
+		<strong>Ключ</strong>
+		<hr>
+		<table>
+			<tr valign="top">
+				<td>
+					<textarea name="key" cols="35" rows="2" wrap="virtual" maxlength="16"></textarea> 
+					<br>
+					<input type="file" onChange="readfile(this.files[0], 1)"></input>
+				</td>
+				<td>
+					Шестнадцатеричное число, размером 64 бита (16-ти значное).
+				</td>
+			</tr>
+		</table>
+		<br>
+		<strong>Результат</strong>
+		<hr>
+		<table>
+			<tr valign="top">
+				<td>
+					<textarea name="output" cols="35" rows="5" wrap="virtual"></textarea> 
+					<br>
+				</td>
+				<td>
+					В каком формате вывести информацию?
+					<br>
+					<input type="radio" name="output_type">ASCII</input>
+					<br>
+					<input type="radio" name="output_type" checked="checked">Шестнадцатеричное число</input>
+				</td>
+			</tr>
+		</table>	
+		<hr>
+		<input type="button" value="Зашифровать" onclick="main(true);">
+		<input type="button" value="Расшифровать" onclick="main(false);">
+	</form>
+	</body>
+</html>
