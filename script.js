@@ -532,22 +532,10 @@ function main(encrypt_flag)
 	
    inData = get_value( document.form.input.value, document.form.input_type[0].checked );
 
-   get_value_of_key( Key, document.form.key.value, false);
+   get_value_of_key( Key, document.form.key.value, document.form.key_type[0].checked);
    if ( Key[0] == ERROR_VAL )
       return;
 	  
    DES_output = des_encrypt(inData, Key, encrypt_flag)
    format_DES_output(DES_output);
 }
-
-
-/*
-Добавить ASCII ключи:
-					<br>
-					<input type="radio" name="key_type" checked="checked">ASCII</input>
-					<br>
-					<input type="radio" name="key_type">Шестнадцатеричное число</input>
-					
-					
-					get_value_of_key( Key, document.form.key.value, document.form.key_type[0].checked);				
-*/

@@ -1,7 +1,6 @@
 <html>
    <head>
         <title>Des encryption/decryption</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
 		<script type="text/JavaScript" src="script.js"></script>
    </head>
 
@@ -43,7 +42,11 @@
 					<input type="file" onChange="readfile(this.files[0], 1)"></input>
 				</td>
 				<td>
-					Шестнадцатеричное число, размером 64 бита (16-ти значное).
+					Как интерпретировать вводимую информацию?
+					<br>
+					<input type="radio" name="key_type">ASCII</input>
+					<br>
+					<input type="radio" name="key_type" checked="checked">Шестнадцатеричное число</input>
 				</td>
 			</tr>
 		</table>
